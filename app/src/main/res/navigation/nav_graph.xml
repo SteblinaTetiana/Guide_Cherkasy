@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startScreenFragment">
+
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.startScreen.StartScreenFragment"
+        android:label="Start Screen Fragment"
+        tools:layout="@layout/fragment_start_screen" >
+        <action
+            android:id="@+id/action_startScreenFragment_to_placesListFragment"
+            app:destination="@id/placesListFragment" />
+        <action
+            android:id="@+id/action_startScreenFragment_to_routeFragment"
+            app:destination="@id/routeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/placesListFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.placeslist.PlacesListFragment"
+        android:label="Places List Fragment"
+        tools:layout="@layout/fragment_places_list" >
+        <action
+            android:id="@+id/action_placesListFragment_to_placeDetailFragment"
+            app:destination="@id/placeDetailFragment" />
+        <action
+            android:id="@+id/action_placesListFragment_to_placeMapFragment"
+            app:destination="@id/placeMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/placeDetailFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.placedetail.PlaceDetailFragment"
+        android:label="Place Detail Fragment" >
+        <action
+            android:id="@+id/action_placeDetailFragment_to_placeMapFragment"
+            app:destination="@id/placeMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/placeMapFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.placemap.PlaceMapFragment"
+        android:label="Place Map Fragment" />
+
+    <fragment
+        android:id="@+id/routeFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.route.RouteFragment"
+        android:label="Route Fragment" >
+        <action
+            android:id="@+id/action_routeFragment_to_routeMapFragment"
+            app:destination="@id/routeMapFragment" />
+        <action
+            android:id="@+id/action_routeFragment_to_createRouteFragment"
+            app:destination="@id/createRouteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/routeMapFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.routemap.RouteMapFragment"
+        android:label="Route MapF ragment" />
+
+    <fragment
+        android:id="@+id/createRouteFragment"
+        android:name="com.geekhub_android_2019.cherkasyguide.ui.createroute.CreateRouteFragment"
+        android:label="Create Route Fragment" />
+
+</navigation>
