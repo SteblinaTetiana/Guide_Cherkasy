@@ -12,7 +12,6 @@ class StartScreenFragment : Fragment(R.layout.fragment_start_screen), View.OnCli
     private val startScreenViewModel
             by activityViewModels<StartScreenViewModel>()
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
