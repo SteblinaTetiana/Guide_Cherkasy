@@ -1,6 +1,7 @@
 package com.geekhub_android_2019.cherkasyguide.models
 
 import com.google.firebase.firestore.*
+import java.io.Serializable
 
 data class Place(
     @DocumentId
@@ -9,4 +10,4 @@ data class Place(
     val location: GeoPoint? = null,
     val description: String? = null,
     val photoSmallUrl: String? = null
-)
+): Serializable

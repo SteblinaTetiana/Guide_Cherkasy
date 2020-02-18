@@ -8,9 +8,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
+import com.geekhub_android_2019.cherkasyguide.models.Place
+import com.geekhub_android_2019.cherkasyguide.ui.placedetail.PlaceDetailFragment
+import com.geekhub_android_2019.cherkasyguide.ui.placeslist.PlacesAdapter
+import com.geekhub_android_2019.cherkasyguide.ui.placeslist.PlacesListFragment
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PlacesAdapter.OnItemClickListener {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -31,11 +35,31 @@ class MainActivity : AppCompatActivity() {
             .setupWithNavController(navController)
         findViewById<Toolbar>(R.id.toolbar)
 
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .add(
+                    R.id.nav_host_fragment,
+                    PlacesListFragment.newInstance()
+                )
+                .commit()
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun onClick(place: Place) {
+        val fragment = PlaceDetailFragment.newInstance(place)
+        val transaction = supportFragmentManager.beginTransaction()
+
+        transaction.replace(R.id.nav_host_fragment, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
 }
+
 
 
