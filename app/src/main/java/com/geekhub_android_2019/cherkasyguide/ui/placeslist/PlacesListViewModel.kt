@@ -26,7 +26,7 @@ class PlacesListViewModel : ViewModel() {
         _places
     }
 
-    fun loadAllPlaces() =
+    private fun loadAllPlaces() =
         viewModelScope.launch(Dispatchers.IO) {
             FirebaseAuth.getInstance()
                 .signInAnonymously()
@@ -40,12 +40,12 @@ class PlacesListViewModel : ViewModel() {
                 .also(_places::postValue)
         }
 
-    fun list(view: View) {
-        when (view.id) {
-            R.id.recycler_view ->
-                view.findNavController().navigate(R.id.action_placesListFragment_to_placeDetailFragment)
-        }
-    }
+    /*   fun list(view: View) {
+           when (view.id) {
+               R.id.cardView_places ->
+                   view.findNavController().navigate(R.id.action_placesListFragment_to_placeDetailFragment)
+           }
+       }*/
 }
 
 

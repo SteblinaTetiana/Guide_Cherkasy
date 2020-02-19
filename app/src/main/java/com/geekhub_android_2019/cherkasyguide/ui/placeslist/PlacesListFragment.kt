@@ -12,8 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.geekhub_android_2019.cherkasyguide.R
 import com.geekhub_android_2019.cherkasyguide.models.Place
+import kotlinx.android.synthetic.main.list_item.*
 
-class PlacesListFragment : Fragment(), View.OnClickListener {
+@Suppress("UNREACHABLE_CODE")
+class PlacesListFragment : Fragment()/*, View.OnClickListener */ {
 
     private lateinit var mAdapter: PlacesAdapter
     private lateinit var clickListener: PlacesAdapter.OnItemClickListener
@@ -27,8 +29,6 @@ class PlacesListFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-      /*  clickListener = PlacesAdapter.OnItemClickListener{place->
-        }*/
         listViewModel.places.observe(viewLifecycleOwner, Observer<List<Place>> {
             mAdapter = PlacesAdapter(listViewModel.places.value!!, clickListener)
             recyclerView.apply {
@@ -45,14 +45,16 @@ class PlacesListFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_places_list, container, false)
+
+        /*cardView_places.setOnClickListener(this)*/
     }
 
-    override fun onClick(view: View) {
-        listViewModel.list(view)
-    }
+    /* override fun onClick(view: View) {
+         listViewModel.list(view)
+     }*/
 
-    companion object {
-        fun newInstance() = PlacesListFragment()
-    }
+    /* companion object {
+         fun newInstance() = PlacesListFragment()
+     }*/
 
 }

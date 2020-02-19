@@ -17,7 +17,6 @@ class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemCli
         fun onClick(place: Place)
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlacesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.list_item, parent, false)
@@ -27,7 +26,6 @@ class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemCli
     override fun getItemCount(): Int {
         return place.size
     }
-
 
     override fun onBindViewHolder(holder: PlacesViewHolder, position: Int) {
         holder.bind(place[position])
@@ -47,12 +45,10 @@ class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemCli
             Glide.with(this.view)
                 .load(place.photoSmallUrl)
                 .into(view.imageViewPlaceIcon)
-
         }
 
         override fun onClick(v: View?) {
             clickListener.onClick(place[adapterPosition])
-
         }
     }
 }
