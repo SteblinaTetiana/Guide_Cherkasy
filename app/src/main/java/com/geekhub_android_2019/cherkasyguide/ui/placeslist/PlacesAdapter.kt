@@ -1,5 +1,6 @@
 package com.geekhub_android_2019.cherkasyguide.ui.placeslist
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import com.geekhub_android_2019.cherkasyguide.models.Place
 import kotlinx.android.synthetic.main.list_item.view.*
 
 
-class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemClickListener) :
+class PlacesAdapter(var place: List<Place>, val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<PlacesAdapter.PlacesViewHolder>() {
 
     interface OnItemClickListener {
@@ -41,7 +42,6 @@ class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemCli
 
         fun bind(place: Place) {
             view.textViewName.text = place.name
-            /*view.imageViewPlaceIcon.setImageURI()*/
             Glide.with(this.view)
                 .load(place.photoSmallUrl)
                 .into(view.imageViewPlaceIcon)
@@ -49,6 +49,7 @@ class PlacesAdapter(var place: List<Place>, private val clickListener: OnItemCli
 
         override fun onClick(v: View?) {
             clickListener.onClick(place[adapterPosition])
+            Log.d("onClick", "click")
         }
     }
 }

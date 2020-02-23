@@ -25,7 +25,8 @@
         tools:layout="@layout/fragment_places_list">
         <action
             android:id="@+id/action_placesListFragment_to_placeDetailFragment"
-            app:destination="@id/placeDetailFragment" />
+            app:destination="@id/placeDetailFragment"
+            app:launchSingleTop="false" />
         <action
             android:id="@+id/action_placesListFragment_to_placeMapFragment"
             app:destination="@id/placeMapFragment" />
@@ -38,6 +39,9 @@
         <action
             android:id="@+id/action_placeDetailFragment_to_placeMapFragment"
             app:destination="@id/placeMapFragment" />
+        <argument
+            android:name="place"
+            app:argType="com.geekhub_android_2019.cherkasyguide.models.Place" />
     </fragment>
 
     <fragment

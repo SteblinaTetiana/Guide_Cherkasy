@@ -10,5 +10,4 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/list_item" />
 
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

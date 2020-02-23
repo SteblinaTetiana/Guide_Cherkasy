@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
-import com.geekhub_android_2019.cherkasyguide.R
 import com.geekhub_android_2019.cherkasyguide.models.Place
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -40,13 +39,16 @@ class PlacesListViewModel : ViewModel() {
                 .also(_places::postValue)
         }
 
-    /*   fun list(view: View) {
-           when (view.id) {
-               R.id.cardView_places ->
-                   view.findNavController().navigate(R.id.action_placesListFragment_to_placeDetailFragment)
-           }
-       }*/
+    fun list(view: View, place: Place) {
+        PlacesListFragmentDirections.actionPlacesListFragmentToPlaceDetailFragment(place).also {
+            view.findNavController().navigate(it)
+        }
+    }
 }
+
+
+
+
 
 
 
