@@ -1,7 +1,6 @@
 package com.geekhub_android_2019.cherkasyguide.ui.placeslist
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,6 @@ class PlacesListFragment : Fragment(), PlacesAdapter.OnItemClickListener {
 
     private lateinit var mAdapter: PlacesAdapter
     private val listViewModel by activityViewModels<PlacesListViewModel>()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,7 +58,5 @@ class PlacesListFragment : Fragment(), PlacesAdapter.OnItemClickListener {
 
     override fun onClick(place: Place) {
         listViewModel.list(this.requireView(), place)
-        Log.d("onClick", "$place")
-
     }
 }

@@ -51,12 +51,3 @@ class PlacesListViewModel : ViewModel() {
         }
     }
 }
-
-
-
-
-
-
-
-
-

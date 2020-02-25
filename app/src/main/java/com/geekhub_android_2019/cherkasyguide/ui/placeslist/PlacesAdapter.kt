@@ -1,6 +1,5 @@
 package com.geekhub_android_2019.cherkasyguide.ui.placeslist
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.geekhub_android_2019.cherkasyguide.R
 import com.geekhub_android_2019.cherkasyguide.models.Place
-import kotlinx.android.synthetic.main.list_item.view.*
+import kotlinx.android.synthetic.main.list_places_item.view.*
 
 
 class PlacesAdapter(var place: List<Place>, val clickListener: OnItemClickListener) :
@@ -20,7 +19,7 @@ class PlacesAdapter(var place: List<Place>, val clickListener: OnItemClickListen
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlacesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.list_item, parent, false)
+        val view = inflater.inflate(R.layout.list_places_item, parent, false)
         return PlacesViewHolder(view)
     }
 
@@ -49,7 +48,6 @@ class PlacesAdapter(var place: List<Place>, val clickListener: OnItemClickListen
 
         override fun onClick(v: View?) {
             clickListener.onClick(place[adapterPosition])
-            Log.d("onClick", "click")
         }
     }
 }

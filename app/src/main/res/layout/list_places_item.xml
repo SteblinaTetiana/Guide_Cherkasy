@@ -43,7 +43,6 @@
                     android:textSize="25sp"
                     tools:ignore="HardcodedText" />
 
-
             </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

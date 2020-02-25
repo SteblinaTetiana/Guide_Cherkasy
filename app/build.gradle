@@ -12,7 +12,6 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 29
     defaultConfig {
-        vectorDrawables.useSupportLibrary = true
         applicationId "com.geekhub_android_2019.cherkasyguide"
         minSdkVersion 23
         targetSdkVersion 29
