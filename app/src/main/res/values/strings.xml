@@ -3,5 +3,6 @@
     <string name="home">Home</string>
     <string name="what_to_see">What to see</string>
     <string name="routes">Routes</string>
+    <string name="map">Map</string>
 
 </resources>

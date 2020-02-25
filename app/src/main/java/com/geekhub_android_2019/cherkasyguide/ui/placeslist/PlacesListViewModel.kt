@@ -44,6 +44,12 @@ class PlacesListViewModel : ViewModel() {
             view.findNavController().navigate(it)
         }
     }
+
+    fun replaceFragment(view: View) {
+        PlacesListFragmentDirections.actionPlacesListFragmentToPlaceMapFragment().also {
+            view.findNavController().navigate(it)
+        }
+    }
 }
 
 
